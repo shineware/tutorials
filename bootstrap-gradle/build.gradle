@@ -1,0 +1,17 @@
+plugins {
+    id 'java'
+}
+
+group 'kr.co.shineware.komoran.tutorials'
+version '0.0.1-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'com.github.shin285:KOMORAN:3.3.4'
+}

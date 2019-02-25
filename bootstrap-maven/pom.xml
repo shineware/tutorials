@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>kr.co.shineware.komoran.tutorials</groupId>
+  <artifactId>bootstrap-maven</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+
+  <name>bootstrap-maven</name>
+  <description>A simple KOMORAN example for maven.</description>
+  <url>https://shineware.co.kr</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <repositories>
+    <repository>
+      <id>jitpack.io</id>
+      <url>https://jitpack.io</url>
+    </repository>
+  </repositories>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.github.shin285</groupId>
+      <artifactId>KOMORAN</artifactId>
+      <version>3.3.4</version>
+    </dependency>
+  </dependencies>
+
+</project>
