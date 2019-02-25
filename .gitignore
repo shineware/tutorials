@@ -40,6 +40,7 @@ captures/
 
 # IntelliJ
 *.iml
+.idea
 .idea/workspace.xml
 .idea/tasks.xml
 .idea/gradle.xml
@@ -472,9 +473,9 @@ typings/
 # When using Gradle or Maven with auto-import, you should exclude module files,
 # since they will be recreated, and may cause churn.  Uncomment if using
 # auto-import.
-# .idea/modules.xml
-# .idea/*.iml
-# .idea/modules
+.idea/modules.xml
+.idea/*.iml
+.idea/modules
 
 # CMake
 
@@ -648,5 +649,10 @@ gradle-app.setting
 
 ### Gradle Patch ###
 **/build/
+
+# Dot Setting Files
+.project
+.settings
+.classpath
 
 # End of https://www.gitignore.io/api/git,macos,node,pycharm,python,phpstorm,laravel,virtualenv,android,apachecordova,appengine,django,git,gradle,jetbrains,linux,visualstudiocode
