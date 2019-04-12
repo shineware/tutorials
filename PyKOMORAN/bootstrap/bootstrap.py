@@ -1,42 +1,44 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-#
-# 3줄의 코드로 형태소 분석 시작하기
-#
+# # 3줄의 코드로 형태소 분석 시작하기
 # PyKomoran을 이용하여 3줄의 코드로 형태소 분석을 따라해보도록 하겠습니다.
 # 이 내용은 [PyKOMORAN 문서 사이트](https://docs.komoran.kr/pykomoran/tutorial.html)에서 확인하실 수 있습니다.
 
-# PyKomoran 설치
-#
+# ## PyKomoran 설치
 # 자세한 설치 관련한 내용은 [PyKomoran 설치하기](https://docs.komoran.kr/pykomoran/installation.html) 문서를 참고해주시기 바랍니다.
+# 아직 PyKomoran 설치가 되어 있지 않다면, 아래 Cell을 실행하여 PyKomoran을 설치합니다.
+# Jupyter Notebook에서는 `!`을 붙여 쉘 명령어 실행이 가능하며, PyKomroan 설치 과정은 3줄의 코딩에 포함되지 않습니다. ^^;
 
-# PyKomoran 불러오기
-#
+get_ipython().system('pip install -U PyKomoran')
+
+# 또한, PyKomoran의 정상적 실행을 위해서는 Java 8+ 이상의 환경이 필요합니다. (Oracle JDK 또는 Open JDK를 권합니다.)
+# 아래 명령어를 실행하여 현재 설치된 Java 환경을 확인합니다.
+
+get_ipython().system('java -version')
+
+# ## PyKomoran 불러오기
 # 다음과 같이 PyKomoran을 불러옵니다.
 
 from PyKomoran import *
 
-# Komoran 객체 생성하기
-#
-# 이제, 형태소 분석을 위한 `Komoran` 객체를 생성합니다.
+# ## Komoran 객체 생성하기
+# 이제, 형태소 분석을 위한 `Komoran` 객체를 생성합니다. 여기에서는 기본으로 제공하는 모델 중 `LIGHT` 모델을 불러오겠습니다.
 # 이 과정에서 Java 버전의 KOMORAN을 불러오게 되며, 약간의 시간이 소요됩니다. 이제 `Komoran` 객체의 메소드를 이용하여 형태소를 분석할 수 있습니다.
 
-komoran = Komoran()
+komoran = Komoran(DEFAULT_MODEL['LIGHT'])
 
-# 형태소 분석하기
-#
+# ## 형태소 분석하기
 # PyKOMORAN은 KOMORAN에서 제공하는 다양한 형태의 형태소 분석 결과를 제공합니다.
 # 우선 입력 문장을 형태소 별로 나누어 `형태소/품사` 형태로 태깅된 결과를 보도록 하겠습니다.
 
 print(komoran.get_plain_text("KOMORAN은 한국어 형태소 분석기입니다."))
 
-# 형태소 분석의 결과인 품사 기호는 [품사표 (PoS Table)](https://docs.komoran.kr/firststep/postypes.html) 에서 찾아보실 수 있습니다.
+# 형태소 분석의 결과인 품사 기호는 [품사표 (PoS Table)](https://pydocs.komoran.kr/firststep/postypes.html) 에서 찾아보실 수 있습니다.
 
-#
-# 번외편. 다양한 방법으로 형태소 분석하기
-#
+# ## 번외편. 다양한 방법으로 형태소 분석하기
 # `Komoran` 객체는 위에서 살펴본 `get_plain_text()` 메소드 외에도, 다양한 메소드들을 지원합니다.
+# 사용 가능한 전체 메소드들에 대한 정보는 [PyKOMORAN 문서 사이트](http://pydocs.komoran.kr/api/python/PyKomoran.core.html)를 참고해주세요.
 # 분석할 문장을 준비하고, 위에서 생성한 `Komoran` 객체의 사용 예시를 살펴보겠습니다.
 
 str_to_analyze = "① 대한민국은 민주공화국이다. ② 대한민국의 주권은 국민에게 있고, 모든 권력은 국민으로부터 나온다."
@@ -62,8 +64,6 @@ print(komoran.get_token_list(str_to_analyze, use_pos_name=True))
 # `get_list(str)`: 입력 문장에 대해서 형태소/품사를 갖는 Pair 자료형들을 반환받습니다.
 print(komoran.get_list(str_to_analyze))
 
-#
-# 결론
-#
+# ## 결론
 # 지금까지 PyKomoran을 이용하여 3줄의 코드로 형태소 분석을 따라해보았습니다.
-# 이 내용은 [PyKOMORAN 문서 사이트](https://docs.komoran.kr/pykomoran/tutorial.html)에서도 확인하실 수 있습니다.
+# 이 내용은 [PyKOMORAN 문서 사이트](https://pydocs.komoran.kr/firststep/tutorial.html)에서도 확인하실 수 있습니다.
